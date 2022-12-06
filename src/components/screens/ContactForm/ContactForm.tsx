@@ -32,7 +32,7 @@ import dayjs, { Dayjs } from 'dayjs'
 import { Stack, TextField } from '@mui/material'
 import { DesktopDatePicker } from '@mui/x-date-pickers'
 import { Link, useNavigate } from 'react-router-dom'
-import { selectInstitutionFn, selectRegionFn } from '@/components/screens/ContactForm/SelectFunc'
+
 
 const stylesSelect = {
 	option: (provided: any) => ({
@@ -152,7 +152,7 @@ const ContactForm: FC<ContactFormProps> = () => {
 
 	const getSchoolsByCity = async () => {
 		if (selectCity && selectInstitutionType) {
-			console.log(`https://contact-form-2d4a6-default-rtdb.firebaseio.com/get_schools_by_city/${selectCity}/${selectInstitutionType}.json`)
+			// console.log(`https://contact-form-2d4a6-default-rtdb.firebaseio.com/get_schools_by_city/${selectCity}/${selectInstitutionType}.json`)
 			const { data } = await axios.get(`https://contact-form-2d4a6-default-rtdb.firebaseio.com/get_schools_by_city/${selectCity}/${selectInstitutionType}.json`)
 
 			if (data) {
@@ -171,7 +171,7 @@ const ContactForm: FC<ContactFormProps> = () => {
 
 	useEffect(() => {
 		getSchoolsByCity().then(e => e !== undefined && console.log(e))
-		console.log(selectCity)
+		// console.log(selectCity)
 	}, [selectCity, selectInstitutionType])
 
 	return (
