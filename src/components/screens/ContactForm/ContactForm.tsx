@@ -213,7 +213,8 @@ const ContactForm: FC<ContactFormProps> = () => {
 									languages: '',
 									consultantDepartment: '',
 									yourQuestion: '',
-									birthday: ''
+									birthday: '',
+									yourInstitution:'',
 								}}
 								onSubmit={async (values, { resetForm }) => {
 									const data = {
@@ -262,6 +263,9 @@ const ContactForm: FC<ContactFormProps> = () => {
 										yourQuestion: values.yourQuestion
 											? values.yourQuestion
 											: 'нет вопросов',
+										yourInstitution:values.yourInstitution
+											? values.yourInstitution
+											: 'Указано в предыдущем пункте',
 										created_at: new Date().toLocaleString('ru', options)
 									}
 									try {
@@ -415,6 +419,28 @@ const ContactForm: FC<ContactFormProps> = () => {
 											/>
 											{touched.institutions && errors.institutions && (
 												<span className={styles.error}>{errors.institutions}</span>
+											)}
+										</div>
+
+										<div
+											className={cn(
+												'w-full mb-4 relative',
+												touched.yourInstitution && errors.yourInstitution && 'mb-8'
+											)}
+										>
+											<p className={'w-full'}>
+												<ContactFormInput
+													className={styles.input}
+													type={'text'}
+													name={'yourInstitution'}
+													value={values.yourInstitution}
+													placeholder={'Если в списке выше отсутствует ваше учебное заведение укажите его здесь'}
+													onChange={handleChange}
+													onBlur={handleBlur}
+												/>
+											</p>
+											{touched.yourInstitution && errors.yourInstitution && (
+												<span className={styles.error}>{errors['yourInstitution']}</span>
 											)}
 										</div>
 

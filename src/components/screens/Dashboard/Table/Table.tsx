@@ -9,13 +9,12 @@ import axios from 'axios'
 import { CONTACT_FORM_BASE_URL } from '@/configs/constants'
 import { Button } from '@mui/material'
 import FileDownloadIcon from '@mui/icons-material/FileDownload'
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import { utils, writeFileXLSX } from 'xlsx'
 
 
 const Table: FC<TableProps> = (props) => {
 	const { users = [], removeDuplicate } = props
-
 
 	const columns = useMemo(
 		() => [
@@ -80,6 +79,11 @@ const Table: FC<TableProps> = (props) => {
 				enableClickToCopy: true
 			},
 			{
+				accessorKey: 'yourInstitution',
+				header: 'Учебное заведение отстутствующее в общем списке',
+				enableClickToCopy: true
+			},
+			{
 				accessorKey: 'formStudy',
 				header: 'Форма обучения',
 				enableClickToCopy: true
@@ -134,6 +138,7 @@ const Table: FC<TableProps> = (props) => {
 				'Город': user.cities,
 				'Вид учебного заведения': user.institutionType,
 				'Учебное заведение': user.institutions,
+				'Учебное заведение отстутствующее в общем списке' : user.yourInstitution,
 				'Форма обучения': user.formStudy,
 				'Предполагаемая образовательная программа': user.educationProgram,
 				'Награды и достижение': user.achievements,

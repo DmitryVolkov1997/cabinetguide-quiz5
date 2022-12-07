@@ -5,6 +5,7 @@ import { IoClose, IoChevronDownSharp } from 'react-icons/io5'
 import { Disclosure, Transition } from '@headlessui/react'
 import { FaAngleUp } from 'react-icons/fa'
 import Button from '@/components/ui/Button/Button'
+import { Link } from 'react-router-dom'
 
 const FinishedQuiz: FC<FinishedQuizProps> = (props) => {
 	const { results, quiz, onRetry } = props
@@ -69,7 +70,9 @@ const FinishedQuiz: FC<FinishedQuizProps> = (props) => {
 				</p>
 				<div className={styles.row}>
 					<Button appearance={'dark'} rounded={'rounded'}>
-						Перейти в список тестов
+						<Link to={'/educational-programs'}>
+							Перейти в список тестов
+						</Link>
 					</Button>
 					<Button appearance={'green'} rounded={'rounded'} onClick={onRetry}>Повторить</Button>
 				</div>

@@ -9,7 +9,7 @@ const links = [
 	{ to: '/', label: 'Регистрация' },
 	{ to: '/educational-programs', label: 'Список тестов' },
 	// { to: '/quiz-creator', label: 'Создать тест' },
-	{ to: '/dashboard', label: 'Админка' }
+	// { to: '/dashboard', label: 'Админка' }
 ]
 
 const Drawer: FC<DrawerProps> = (props) => {

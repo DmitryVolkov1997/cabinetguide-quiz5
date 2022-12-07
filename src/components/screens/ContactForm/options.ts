@@ -129,11 +129,11 @@ const institutionType = [
 		value: 'institution_type_id=3',
 		label: 'университет (бакалавриат/магистратура)'
 	},
-	{
-		value: 'institution_type_id=4',
-		label: 'предприятие корпоративного университета'
-	},
-	{ value: 'institution_type_id=5', label: 'другое' }
+	// {
+	// 	value: 'institution_type_id=4',
+	// 	label: 'предприятие корпоративного университета'
+	// },
+	// { value: 'institution_type_id=5', label: 'другое' }
 ]
 
 const institutions = [

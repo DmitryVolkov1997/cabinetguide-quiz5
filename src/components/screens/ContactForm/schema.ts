@@ -29,5 +29,6 @@ export const validationSchema = yup.object().shape({
 	institutions: yup.string().required('Обязательное поле'),
 	formStudy: yup.string().required('Обязательное поле'),
 	languages: yup.string().required('Обязательное поле'),
-	consultantDepartment: yup.string().required('Обязательное поле')
+	consultantDepartment: yup.string().required('Обязательное поле'),
+	yourInstitution:yup.string().typeError('Должно быть строкой'),
 })
