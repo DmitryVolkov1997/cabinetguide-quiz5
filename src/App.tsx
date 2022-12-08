@@ -9,7 +9,6 @@ import EducationProgramList from '@/components/screens/EducationProgramList/Educ
 import EducationSubcategoryList from '@/components/screens/EducationSubcategoryList/EducationSubcategoryList'
 import Dashboard from '@/components/screens/Dashboard/Dashboard'
 import SuccessfulForm from '@/components/screens/SuccessfulForm/SuccessfulForm'
-import Switches from '@/components/screens/Switches/Switches'
 
 const App: FC = (): JSX.Element => {
 	return (
