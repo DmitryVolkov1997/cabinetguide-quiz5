@@ -66,6 +66,10 @@
   @apply text-lg italic font-bold;
 }
 
+.input::placeholder {
+  white-space: pre-wrap;
+}
+
 @media (max-width: 1060px) {
   .wrapper {
     @apply flex-col justify-center items-center;

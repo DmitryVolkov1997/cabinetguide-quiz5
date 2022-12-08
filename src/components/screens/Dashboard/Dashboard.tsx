@@ -40,9 +40,13 @@ const Dashboard: FC<DashboardProps> = () => {
 		}
 	}
 
+	// useEffect(() => {
+	// 	getDuplicate()
+	// }, [duplicates])
+
 	useEffect(() => {
 		getDuplicate()
-	}, [duplicates])
+	}, [])
 
 	const removeDuplicate = async (id: string) => {
 		await axios.delete(

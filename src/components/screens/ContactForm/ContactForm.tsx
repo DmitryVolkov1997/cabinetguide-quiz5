@@ -52,8 +52,11 @@ const stylesSelect = {
 
 let options: any = {
 	year: 'numeric',
-	month: 'long',
-	day: 'numeric'
+	// month: 'long',
+	month: 'numeric',
+	day: 'numeric',
+	hour: 'numeric',
+	minute: 'numeric'
 }
 
 const ContactForm: FC<ContactFormProps> = () => {
@@ -118,7 +121,8 @@ const ContactForm: FC<ContactFormProps> = () => {
 		})
 	}
 
-	const [value, setValue] = useState<Dayjs | null>(dayjs('2006-08-18'))
+	// const [value, setValue] = useState<Dayjs | null>(dayjs('2006-08-18'))
+	const [value, setValue] = useState<any>(dayjs('2006-08-18'))
 
 	const handleChangeDatePicker = (newValue: Dayjs | null) => {
 		setValue(newValue)
@@ -159,9 +163,9 @@ const ContactForm: FC<ContactFormProps> = () => {
 				const arr: { value: string, label: string }[] = []
 
 				Object.keys(data).map((key, idx) => {
-						arr.push(
-							...data[key]
-						)
+					arr.push(
+						...data[key]
+					)
 				})
 
 				setInstitutionsData(arr)
@@ -214,7 +218,7 @@ const ContactForm: FC<ContactFormProps> = () => {
 									consultantDepartment: '',
 									yourQuestion: '',
 									birthday: '',
-									yourInstitution:'',
+									yourInstitution: ''
 								}}
 								onSubmit={async (values, { resetForm }) => {
 									const data = {
@@ -230,7 +234,7 @@ const ContactForm: FC<ContactFormProps> = () => {
 											: 'не указано',
 										email: values.email.toLowerCase(),
 										phone: values.phone,
-										birthday: value,
+										birthday: value ? value.$d.toLocaleString().slice(0, 10) : 'не указано',
 										socialStatus: values.socialStatus
 											? values.socialStatus
 											: 'не выбрано',
@@ -263,7 +267,7 @@ const ContactForm: FC<ContactFormProps> = () => {
 										yourQuestion: values.yourQuestion
 											? values.yourQuestion
 											: 'нет вопросов',
-										yourInstitution:values.yourInstitution
+										yourInstitution: values.yourInstitution
 											? values.yourInstitution
 											: 'Указано в предыдущем пункте',
 										created_at: new Date().toLocaleString('ru', options)
@@ -430,7 +434,7 @@ const ContactForm: FC<ContactFormProps> = () => {
 										>
 											<p className={'w-full'}>
 												<ContactFormInput
-													className={styles.input}
+													className={cn(styles.input, 'min-h-[50px] h-full pt-0 pb-4')}
 													type={'text'}
 													name={'yourInstitution'}
 													value={values.yourInstitution}

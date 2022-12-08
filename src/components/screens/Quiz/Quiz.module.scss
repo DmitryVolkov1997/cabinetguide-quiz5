@@ -3,7 +3,7 @@
 }
 
 .title {
-  @apply mb-5;
+  @apply mb-5 text-center;
 }
 
 .row {
@@ -21,6 +21,8 @@
 .modalButtons {
   @apply mt-7 border-t border-separate pt-7 flex gap-6;
 }
+
+
 
 @media(max-width: 448px) {
   .modalButtons {

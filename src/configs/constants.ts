@@ -5,7 +5,7 @@ const CONTACT_FORM_BASE_URL: string =
 	'https://react-quiz-8baed-default-rtdb.firebaseio.com/'
 
 
-// Тестовая бд для формы
+// //Тестовая бд для формы
 // const CONTACT_FORM_BASE_URL: string =
 // 	'https://fir-react-storage-9f79b-default-rtdb.firebaseio.com/'
 
